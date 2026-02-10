@@ -60,15 +60,16 @@ public class ThirdPersonMovement : MonoBehaviour
     void DoAnimation()
     {
 
-        bool runPressed = Input.GetKey("left shift");
+        bool runPressed = Input.GetKey(KeyCode.LeftShift);
         bool jumpPressed = Input.GetKeyDown(KeyCode.Space);
 
         bool Run = animator.GetBool(RunHash);
         bool Jump = animator.GetBool(JumpHash);
         bool Idle = animator.GetBool(IdleHash);
+        bool Walk = animator.GetBool(WalkHash);
 
         bool isMoving = direction.magnitude > 0.1f;
-        bool isntMoving = direction.magnitude < 0.1f;
+       
 
         /*
 
@@ -109,6 +110,8 @@ public class ThirdPersonMovement : MonoBehaviour
             print("is stationary");
 
         }
+
+        if (isMoving && runPressed)
         /*
 
         if (direction.magnitude < 0.1f && runPressed)

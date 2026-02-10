@@ -359,14 +359,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 734a48ae92cb6204c8b71528dd591a4a, type: 2}
     - target: {fileID: 5866666021909216657, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'ROOT'\n\tTransform 'RightShoulder'\n\tTransform
-        'LeftThumb1'\n\tTransform 'RightMiddle2'\n\tTransform 'Spine1'\n\tTransform
-        'RightFoot'\n\tTransform 'LeftArm'\n\tTransform 'ROOT'\n\tTransform 'RightPinky1'\n\tTransform
-        'RightRing2'\n\tand more ...\n\tFrom animation clip 'mixamo.com'\n\tFrom
-        animation clip 'mixamo.com'\n\tFrom animation clip 'mixamo.com'\n\tFrom animation
-        clip 'mixamo.com'"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -375,10 +368,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1441473587}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
 --- !u!1 &410087039
 GameObject:
@@ -521,7 +511,7 @@ GameObject:
   - component: {fileID: 498133432}
   m_Layer: 0
   m_Name: ThirdPersonPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -952,7 +942,7 @@ GameObject:
   - component: {fileID: 1428271762}
   - component: {fileID: 1428271761}
   - component: {fileID: 1428271760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1052,23 +1042,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1441473583 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
-  m_PrefabInstance: {fileID: 363103050}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1441473587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441473583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 223c9d4208faa2a43845b200eca6facd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Animations
 --- !u!4 &1441473588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
@@ -1080,7 +1053,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 330585546}
   - {fileID: 870173027}
-  - {fileID: 410087041}
   - {fileID: 832575519}
+  - {fileID: 410087041}
   - {fileID: 1428271763}
   - {fileID: 498133429}
