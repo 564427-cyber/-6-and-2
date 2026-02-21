@@ -69,29 +69,12 @@ public class ThirdPersonMovement : MonoBehaviour
         bool Walk = animator.GetBool(WalkHash);
 
         bool isMoving = direction.magnitude > 0.1f;
-       
+        bool isRunning = isMoving && runPressed;
 
-        /*
-
-        if (isMoving && !runPressed)
-        {
-            
-            animator.SetBool(WalkHash, true);
-        }
-        if (isntMoving)
-        {
-            animator.SetBool(WalkHash, false);
-        }
-        */
-
-        if (isMoving && runPressed)
+        if (isRunning)
         {
             animator.SetBool(RunHash, true);
-            animator.SetBool(WalkHash, false);
-            animator.SetBool(IdleHash, false);
-
-            print("is runnning");
-        }
+        }       
         else if (isMoving)
         {
             animator.SetBool(RunHash, false);
@@ -110,41 +93,5 @@ public class ThirdPersonMovement : MonoBehaviour
             print("is stationary");
 
         }
-
-        if (isMoving && runPressed)
-        /*
-
-        if (direction.magnitude < 0.1f && runPressed)
-        {
-            animator.SetBool(RunHash, false);
-            animator.SetBool(WalkHash, false);
-        }
-
-        if (direction.magnitude < 0.1f && !runPressed)
-        {
-            animator.SetBool(RunHash, false);
-            animator.SetBool(WalkHash, false);
-        }
-
-        if (runPressed && isMoving)
-        {
-            animator.SetBool(RunHash, true);
-        }
-
-        if (runPressed && !isMoving)
-        {
-            animator.SetBool(RunHash, false);
-        }
-
-        if (Jump && jumpPressed)
-        {
-            animator.SetBool(JumpHash, true);
-        }
-
-        if (!Jump && !jumpPressed)
-        {
-            animator.SetBool(JumpHash, false);
-        }
-        */
     }
 }
