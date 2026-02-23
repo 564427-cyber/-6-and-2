@@ -5,7 +5,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
 
-    Animator animator;
+    public Animator animator;
 
     public float speed = 6f;
 
@@ -18,6 +18,11 @@ public class ThirdPersonMovement : MonoBehaviour
     int JumpHash;
     int IdleHash;
 
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
 
     void Start()
@@ -53,7 +58,7 @@ public class ThirdPersonMovement : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
-        print("mag=" + direction.magnitude);
+       
 
     }
 
@@ -81,7 +86,7 @@ public class ThirdPersonMovement : MonoBehaviour
             animator.SetBool(WalkHash, true);
             animator.SetBool(IdleHash, false);
 
-            print("is walking");
+         
 
         }
         else
@@ -90,7 +95,7 @@ public class ThirdPersonMovement : MonoBehaviour
             animator.SetBool(WalkHash, false);
             animator.SetBool(IdleHash, true);
 
-            print("is stationary");
+          
 
         }
     }
