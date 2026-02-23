@@ -16,7 +16,7 @@ public class ThirdPersonMovement : MonoBehaviour
     int WalkHash;
     int RunHash;
     int JumpHash;
-    int IdleHash;
+    
 
 
     private void Awake()
@@ -28,11 +28,6 @@ public class ThirdPersonMovement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        WalkHash = Animator.StringToHash("Walk");
-        RunHash = Animator.StringToHash("Run");
-        JumpHash = Animator.StringToHash("Jump");
-        IdleHash = Animator.StringToHash("Idle");
-
     }
 
     // Update is called once per frame
@@ -68,32 +63,26 @@ public class ThirdPersonMovement : MonoBehaviour
         bool runPressed = Input.GetKey(KeyCode.LeftShift);
         bool jumpPressed = Input.GetKeyDown(KeyCode.Space);
 
-        bool Run = animator.GetBool(RunHash);
-        bool Jump = animator.GetBool(JumpHash);
-        bool Idle = animator.GetBool(IdleHash);
-        bool Walk = animator.GetBool(WalkHash);
-
         bool isMoving = direction.magnitude > 0.1f;
         bool isRunning = isMoving && runPressed;
 
+
+        print("running=" + isRunning + "  isMoving=" + isMoving);
+
         if (isRunning)
         {
-            animator.SetBool(RunHash, true);
+            animator.SetBool("Run", true);
         }       
         else if (isMoving)
         {
-            animator.SetBool(RunHash, false);
-            animator.SetBool(WalkHash, true);
-            animator.SetBool(IdleHash, false);
-
-         
+            animator.SetBool("Run", false);
+            animator.SetBool("Walk", true);
 
         }
         else
         {
-            animator.SetBool(RunHash, false);
-            animator.SetBool(WalkHash, false);
-            animator.SetBool(IdleHash, true);
+            animator.SetBool("Run", false);
+            animator.SetBool("Walk", false);
 
           
 
