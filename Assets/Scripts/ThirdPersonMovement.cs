@@ -13,11 +13,6 @@ public class ThirdPersonMovement : MonoBehaviour
     float smoothTurnVelocity;
     Vector3 direction;
 
-    int WalkHash;
-    int RunHash;
-    int JumpHash;
-    
-
 
     private void Awake()
     {
@@ -72,7 +67,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (isRunning)
         {
             animator.SetBool("Run", true);
-        }       
+        }
         else if (isMoving)
         {
             animator.SetBool("Run", false);
@@ -84,8 +79,25 @@ public class ThirdPersonMovement : MonoBehaviour
             animator.SetBool("Run", false);
             animator.SetBool("Walk", false);
 
-          
 
+
+        }
+
+        if (jumpPressed)
+        {
+            animator.SetBool("Jump", true);
+        }
+        if (jumpPressed && isMoving)
+        {
+            animator.SetBool("Jump", true);
+        }
+        else if (isRunning && jumpPressed)
+        {
+            animator.SetBool("Jump", false);
+        }
+        else
+        {
+            animator.SetBool("Jump", false);
         }
     }
 }
